@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    max-width: 90%;
+    margin: 0 auto;
+    background: black;
+    color: beige; 
+    text-align: center; 
+    font-family: 'Lora', Garamond, serif;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 80px 1fr 1fr;
+    padding-top: 10px;
+    grid-area: header;
+}
+
+header h1 {
+    text-transform: uppercase; 
+    font-family: 'Nanum Myeongjo', 'Rockwell Light', Garamond, serif; 
+    font-weight: bold;
+}
+
+h1 span {
+    font-size: 44px;
+}
+
+.narrow {
+    font-size: 40px;
+    text-align: right; 
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+    margin-right: 5px;
+}
+
+header p {
+    font-size: 12px;
+    grid-row: 1 / span 1;
+    padding: 5px;
+    text-align: left;
+    letter-spacing: .1rem;
+    line-height: 1.25rem;
+    text-shadow: 1px;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+li {
+    list-style: none;
+    letter-spacing: .25rem;
+    padding: 5px;
+}
+
+li:hover {
+    color: white;
+}
+
+.circle {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 25px auto;
+}
+
+.red {
+    background: #990000;
+    grid-area: red;
+}
+
+.yellow {
+    background: #CCCC33; 
+    grid-area: yellow;
+}
+
+.blue {
+    background: #0066FF; 
+    grid-area: blue;
+}
+
+footer {
+    grid-area: footer; 
+}
+
+/* Desktop */ 
+
+.wide {
+    font-size: 60px;
+    font-weight: 800;
+    display: none;
+}
+
+@media only screen and (min-width: 960px) {
+
+    .narrow {
+        display: none;
+    }
+    .wide {
+        display: block; 
+        font-size: 
+    }
+    header p {
+        display: block; 
+    }
+    body {
+        display: grid;
+        grid-template-areas: 
+        "header header header"
+        "nav nav nav"
+        ". red ."
+        ". yellow ."
+        ". blue ."
+        "footer footer footer"
+    }
+}
