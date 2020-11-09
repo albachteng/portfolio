@@ -6,17 +6,15 @@
 body {
     max-width: 90%;
     margin: 0 auto;
-    background: black;
+    background: #333;
     color: beige; 
     text-align: center; 
     font-family: 'Lora', Garamond, serif;
+    font-size: 18px;
 }
 
 header {
-    display: grid;
-    grid-template-columns: 80px 1fr 1fr;
     padding-top: 10px;
-    grid-area: header;
 }
 
 header h1 {
@@ -25,23 +23,10 @@ header h1 {
     font-weight: bold;
 }
 
-h1 span {
-    font-size: 44px;
-}
-
-.narrow {
-    font-size: 40px;
-    text-align: right; 
-    grid-column: 2 / span 2;
-    grid-row: 1 / span 2;
-    margin-right: 5px;
-}
-
-header p {
-    font-size: 12px;
-    grid-row: 1 / span 1;
+aside p { /* NTS: not sure I like the use of aside here */ 
+    font-size: 18px;
     padding: 5px;
-    text-align: left;
+    text-align: center;
     letter-spacing: .1rem;
     line-height: 1.25rem;
     text-shadow: 1px;
@@ -58,64 +43,114 @@ li {
     padding: 5px;
 }
 
-li:hover {
+li a:hover {
     color: white;
+    text-decoration: underline;
+}
+
+a {
+    text-decoration: none;
+    color: beige;
+}
+
+address {
+    font-style: normal;
 }
 
 .circle {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 75px;
+    width: 75px;
     margin: 25px auto;
 }
 
 .red {
     background: #990000;
-    grid-area: red;
 }
 
 .yellow {
     background: #CCCC33; 
-    grid-area: yellow;
 }
 
 .blue {
     background: #0066FF; 
-    grid-area: blue;
-}
-
-footer {
-    grid-area: footer; 
 }
 
 /* Desktop */ 
 
 .wide {
-    font-size: 60px;
+    font-size: 7.5vw;
     font-weight: 800;
-    display: none;
+    padding-top: 10px;
+    font-stretch: ultra-expanded;
+}
+
+.wide span {
+    font-size: 8.5vw;
+}
+
+footer {
+    margin-top: 10px;
 }
 
 @media only screen and (min-width: 960px) {
-
-    .narrow {
-        display: none;
-    }
-    .wide {
-        display: block; 
-        font-size: 
-    }
-    header p {
-        display: block; 
-    }
     body {
         display: grid;
-        grid-template-areas: 
-        "header header header"
-        "nav nav nav"
-        ". red ."
-        ". yellow ."
-        ". blue ."
-        "footer footer footer"
+        grid-template-columns: repeat(12, minmax(60px, auto));
+        grid-auto-rows: minmax(60px, auto);
     }
+    header {
+        grid-column: 1 / span 12;
+        grid-row: 1 / span 2;
+        text-align: right; 
+    }
+    nav {
+        grid-column: 1 / span 3;
+        grid-row: 3 / span 1;
+    }
+    aside {
+        grid-column: 10 / span 3;
+        grid-row: 3 / span 1;
+        text-align: right; 
+    }
+    .red {
+        grid-column: 10 / span 1;
+        grid-row: 4 / span 1;
+    }
+    .yellow {
+        grid-column: 11 / span 1;
+        grid-row: 4 / span 1;
+    }
+    .blue {
+        grid-column: 12 / span 1;
+        grid-row: 4 / span 1;
+    }
+    footer {
+        grid-column: 12 / span 1;
+        grid-row: 5 / span 1;
+        margin-top: 300px;
+        text-align: right; 
+    }
+}
+
+/* animations */ 
+
+.circle:hover {
+    cursor: pointer;
+}
+
+.animated {
+    animation: bounce 1s;
+    animation-iteration-count: 1;
+    transform-origin: top;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1,1)      translateY(0); }
+    10%  { transform: scale(1.1,.9)   translateY(0); }
+    30%  { transform: scale(.9,1.1)   translateY(-30px); }
+    50%  { transform: scale(1.05,.95) translateY(0); }
+    57%  { transform: scale(1,1)      translateY(-7px); }
+    64%  { transform: scale(1,1)      translateY(0); }
+    100% { transform: scale(1,1)      translateY(0); }
 }
