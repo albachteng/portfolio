@@ -5,6 +5,11 @@
 
 :root {
     font-size: 18px;
+    --white: #dedede;
+    --black: #232333;
+    --gray1: #454555;
+    --blue: #4599dd;
+    --yellow: #99dd45;
 }
 
 body {
@@ -33,14 +38,16 @@ header h1 {
 
 header h1 span {
     font-size: 4.5rem;
-    text-shadow: 4px 4px 1px black;
+    text-shadow: 4px 4px 1px var(--blue);
 }
 
 /* Navigation */
 
 nav {
+    display: inline; 
     position: relative;
     top: -10rem;
+    width: 6rem;
 }
 
 nav ul {
@@ -54,8 +61,8 @@ li {
 }
 
 li a:hover {
-    color: white;
-    background: #454555;
+    color: var(--blue);
+    background: var(--gray1);
     text-decoration: underline;
 }
 
@@ -66,31 +73,24 @@ a {
 
 /* Circles */ 
 
-.circles {
-    position: relative;
-    top: -10rem;
-}
-
 .circle {
+    display: inline-block;
     border-radius: 50%;
-    height: 3rem;
-    width: 3rem;
-    margin: .5rem;
-    margin-left: auto;
-    z-index: 10;
+    height: 1rem;
+    width: 1rem;
+    opacity: .9;
 }
 
-.red {
-    background: white;
+.light {
+    background: linear-gradient(to right, var(--white), white);
+    border: 1px solid var(--black); 
 }
 
-.yellow {
-    background: black; 
+.dark {
+    background: linear-gradient(to right, var(--black), black); 
+    border: 1px solid var(--white);
 }
 
-.blue {
-    background: grey; 
-}
 
 /* Footer */ 
 
@@ -164,9 +164,9 @@ footer {
 @keyframes bounce {
     0%   { transform: scale(1,1)      translateY(0); }
     10%  { transform: scale(1.1,.9)   translateY(0); }
-    30%  { transform: scale(.9,1.1)   translateY(-30px); }
+    30%  { transform: scale(.9,1.1)   translateY(-10px); }
     50%  { transform: scale(1.05,.95) translateY(0); }
-    57%  { transform: scale(1,1)      translateY(-7px); }
+    57%  { transform: scale(1,1)      translateY(-3px); }
     64%  { transform: scale(1,1)      translateY(0); }
     100% { transform: scale(1,1)      translateY(0); }
 }
