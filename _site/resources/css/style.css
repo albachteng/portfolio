@@ -3,40 +3,31 @@
     margin: 0;
 }
 
+:root {
+    font-size: 18px;
+}
+
 body {
     max-width: 90%;
-    padding-top: 25px;
     margin: 0 auto;
-    background: #333;
-    color: beige; 
-    text-align: center; 
-    font-family: 'Lora', Garamond, serif;
-    font-size: 18px;
-    text-shadow: 1px 1px black;
+    background: #232333;
+    color: #dedede; 
+    font-family: 'Open Sans', sans-serif;
 }
 
 header {
-    padding-top: 10px;
+    padding-bottom: 16rem; 
+    background: linear-gradient(to top, #454555, #232333);
+    clip-path: polygon(0% 0%,
+                       100% 0%,
+                       100% 100%,
+                       0% 0%);
 }
 
 header h1 {
+    margin: 1rem;
+    text-align: right;
     text-transform: uppercase; 
-    font-family: 'Nanum Myeongjo', 'Rockwell Light', Garamond, serif; 
-    font-weight: bold;
-}
-
-aside p { /* NTS: not sure I like the use of aside here */ 
-    font-size: 18px;
-    padding: 5px;
-    text-align: center;
-    letter-spacing: .1rem;
-    line-height: 1.25rem;
-}
-
-.about {
-    margin: 0 50px;
-    padding: 25px;
-    text-align: left;
 }
 
 #headshot {
@@ -55,8 +46,6 @@ nav ul {
 
 li {
     list-style: none;
-    letter-spacing: .25rem;
-    padding: 5px;
 }
 
 li a:hover {
@@ -66,7 +55,7 @@ li a:hover {
 
 a {
     text-decoration: none;
-    color: beige;
+    color: #ededed;
 }
 
 address {
